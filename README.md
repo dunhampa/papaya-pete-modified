@@ -1,3 +1,13 @@
+---
+# Pete Modified
+
+WIP of Pete's updates to this theme.
+
+This repo is a submodule of that.
+
+Source for WIP site is here: https://github.com/dunhampa/hugo_sandboxThemePapaya (gif video from August 2022)
+
+---
 # Papaya
 
 Minimalist Hugo theme with social buttons and analytics.
