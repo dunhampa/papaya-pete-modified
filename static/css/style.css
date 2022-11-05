@@ -8,6 +8,10 @@
     max-width: 800px;
 }
 
+video{
+    max-width: 800px;
+}
+
 #nav a {
     font-weight: bold;
     color: inherit;
@@ -67,3 +71,4 @@ a.summary:link, a.summary:visited, a.summary:hover, a.summary:active {
 .footer {
     color: darkgrey;
 }
+
