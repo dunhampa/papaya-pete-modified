@@ -1,9 +1,11 @@
 {{ define "main" }}
 
 {{ if (fileExists "/homepage/homepage.md") }}
+
+<span id="home-jumbotron" class="jumbotron text-center">
+  <h1 class="title">{{ .Site.Title }}</h1></span>
        {{ with $.Site.GetPage "/homepage/homepage.md" }} 
             <!-- <div class="content"> -->
-              {{ partial "metadata.html" . }}
               <br><br>
               {{- .Content -}}
               {{ partial "footer.html" . }}
