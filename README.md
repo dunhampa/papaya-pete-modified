@@ -1,3 +1,11 @@
+# Quick Ref
+
+At image that can be click expanded and gallery in a modal (using lightbox 2 js)
+
+```
+  {{<imageToClick imagePath = "DALL·E 2022-11-14 21.23.51 - Fullstack problem solver agilist collaborator as a battle scene oil painting. Has computers and technology floating around.png" Capition = "DALL·E 2022-11-14 21.23.51 - Fullstack problem solver agilist collaborator as a battle scene oil painting. Has computers and technology floating around"  width = "75%" >}}
+```
+
 
 # Pete Modified
 
