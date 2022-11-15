@@ -1,5 +1,7 @@
 # Quick Ref
 
+Re-deploy
+
 At image that can be click expanded and gallery in a modal (using lightbox 2 js)
 
 ```
