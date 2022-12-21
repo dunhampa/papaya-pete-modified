@@ -54,6 +54,7 @@ h1.title {
     padding-bottom: 0.3em;
 }
 
+
 img {
     max-width: 100%;
 }
@@ -72,3 +73,8 @@ a.summary:link, a.summary:visited, a.summary:hover, a.summary:active {
     color: darkgrey;
 }
 
+@media only screen and (max-width: 600px) {
+    img.floating {
+      width: 100% !important;
+    } 
+}
