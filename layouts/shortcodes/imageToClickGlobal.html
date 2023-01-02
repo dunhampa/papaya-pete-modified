@@ -1,5 +1,15 @@
 {{$imgPosition := .Get "imgPosition" | default "default value"}}
 
+{{ $Caption := .Params.Caption | default "" }}
+{{ $Capition := .Params.Capition | default ""  }}
+{{ if ne $Caption "" }}
+    {{ $Caption = $Caption }} 
+{{ else }}
+    {{ $Caption = $Capition }} 
+{{ end }}
+
+
+
 {{$floatSide := "left"}}
 {{$marginSide:= "right"}}
 
@@ -12,4 +22,4 @@
 {{end}}
 
 
-<a href="{{ .Get "imagePath"}}" data-lightbox="image-1" data-title="{{ .Get "Capition"}}" ><img src="{{ .Get "imagePath"}}"  alt="{{ .Get "Capition"}}" style="width:{{ .Get "width" }}; float:{{$floatSide}}; margin-{{$marginSide}} : 20px;" class="floating" ></a>
+<a href="{{ .Get "imagePath"}}" data-lightbox="image-1" data-title="{{ $Caption }}" ><img src="{{ .Get "imagePath"}}"  alt="{{ $Caption }}" style="width:{{ .Get "width" }}; float:{{$floatSide}}; margin-{{$marginSide}} : 20px;" class="floating" ></a>
