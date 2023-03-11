@@ -85,3 +85,20 @@ background: #212529 !important;
 color: #fdfdfd !important;
 font-family: helvetica !important;
 }
+
+#overlay:after {
+    width: 40px;
+    height: 40px;
+    content: 'X';
+    padding: 0;
+    margin: 0;
+    background: red;
+    border-radius: 50%;
+    color: #FFF;
+    line-height: 40px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+  }
