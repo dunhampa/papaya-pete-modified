@@ -78,3 +78,10 @@ a.summary:link, a.summary:visited, a.summary:hover, a.summary:active {
       width: 100% !important;
     } 
 }
+
+.lb-caption {
+font-size: 55px !important;
+background: #212529 !important;
+color: #fdfdfd !important;
+font-family: helvetica !important;
+}
