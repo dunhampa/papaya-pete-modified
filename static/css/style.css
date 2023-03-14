@@ -85,3 +85,11 @@ color: #fdfdfd !important;
 font-family: helvetica !important;
 }
 
+.lb-data .lb-number {
+    display: block;
+    clear: left;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 30px !important;
+    color: #58c3ee;
+  }
