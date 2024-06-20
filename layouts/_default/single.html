@@ -1,9 +1,14 @@
 {{ define "main" }}
 {{ partial "breadcrumbs.html" . }}
-<h1>{{ .Title }}</h1>
 
+<h1>{{ .Title }}</h1>
+{{ partial "previousandnext.html" . }}
 <br>
 {{ .Content }}
+
+{{ partial "previousandnext.html" . }}
+
+
 {{ partial "footer.html" . }}
 
 {{ end }}

@@ -1,0 +1,58 @@
+{{ $chapterPages := where .Site.Pages "Section" "Chapters" }}
+{{ $currentChapter := .Parent }}
+{{ $currentPage := . }}
+{{ $currentChapterPages := $currentChapter.Pages.ByWeight }}
+
+<!-- Identify next and previous pages within the current chapter -->
+{{ $nextPage := false }}
+{{ $prevPage := false }}
+{{ range $i, $page := $currentChapterPages }}
+    {{ if eq $page $currentPage }}
+        {{ if lt $i (sub (len $currentChapterPages) 1) }}
+            {{ $nextPage = index $currentChapterPages (add $i 1) }}
+        {{ end }}
+        {{ if gt $i 0 }}
+            {{ $prevPage = index $currentChapterPages (sub $i 1) }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+<!-- Get all chapters -->
+{{ $chapters := sort .Site.Pages.ByWeight "Weight" }}
+{{ $currentChapterIndex := -1 }}
+{{ range $i, $chapter := $chapters }}
+    {{ if eq $chapter.Permalink $currentChapter.Permalink }}
+        {{ $currentChapterIndex = $i }}
+    {{ end }}
+{{ end }}
+
+<!-- Handle navigation to the next chapter if at the end of the current chapter -->
+{{ if not $nextPage }}
+    {{ if lt (add $currentChapterIndex 1) (len $chapters) }}
+        {{ $nextChapter := index $chapters (add $currentChapterIndex 1) }}
+        {{ if $nextChapter }}
+            {{ $nextPage = index $nextChapter.Pages.ByWeight 0 }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+<!-- Handle navigation to the previous chapter if at the beginning of the current chapter -->
+{{ if not $prevPage }}
+    {{ if gt $currentChapterIndex 0 }}
+        {{ $prevChapter := index $chapters (sub $currentChapterIndex 1) }}
+        {{ if $prevChapter }}
+            {{ $prevChapterPages := $prevChapter.Pages.ByWeight }}
+            {{ $prevPage = index $prevChapterPages (sub (len $prevChapterPages) 1) }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+<div class="navigation">
+    {{ with $prevPage }}
+        <a href="{{ .RelPermalink }}">Previous</a>
+    {{ end }}
+    &nbsp;&nbsp;&nbsp;
+    {{ with $nextPage }}
+        <a href="{{ .RelPermalink }}">Next</a>
+    {{ end }}
+</div>
