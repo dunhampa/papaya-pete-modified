@@ -4,8 +4,9 @@
 <h1>{{ .Title }}</h1>
 {{ partial "previousandnext.html" . }}
 <br>
-{{ .Content }}
-
+<div class="content-container clearfix">
+   {{ .Content }}
+</div>
 {{ partial "previousandnext.html" . }}
 
 
